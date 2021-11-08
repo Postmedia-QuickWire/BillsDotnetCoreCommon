@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f0ba85f6-5a95-4487-881f-fbd26b5b51dc</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Common</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AccentNormalizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApiKeyAuthHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BackgroundSerivceWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JwtTokenServiceBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)bfunct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CaptchaImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CipherService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExecutionPlan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JwtTokenBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SerializableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SwaggerAuthorized.cs" />
+  </ItemGroup>
+</Project>
