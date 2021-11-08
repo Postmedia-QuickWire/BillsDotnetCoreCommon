@@ -6,7 +6,7 @@
     <SharedGUID>f0ba85f6-5a95-4487-881f-fbd26b5b51dc</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Common</Import_RootNamespace>
+    <Import_RootNamespace>BillsCoreCommon</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AccentNormalizer.cs" />
