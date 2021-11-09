@@ -9,16 +9,20 @@
     <Import_RootNamespace>Common</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AccentNormalizer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ApiKeyAuthHandler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)BackgroundSerivceWrapper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)JwtTokenServiceBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)bfunct.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CaptchaImage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CipherService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ExecutionPlan.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)JwtTokenBuilder.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SerializableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ApiKeyAuthHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BackgroundSerivceWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\AccentNormalizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\JwtTokenServiceBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\bfunct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\CaptchaImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CipherService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\ExecutionPlan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\JwtTokenBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginWatcherService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\RequestPiplineTemplateMiddleware.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\SerializableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\StringHash.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SwaggerAuthorized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TokenController.cs" />
   </ItemGroup>
 </Project>
