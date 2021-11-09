@@ -9,6 +9,8 @@
     <Import_RootNamespace>Common</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\SwaggerAuthorized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\TokenController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ApiKeyAuthHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BackgroundSerivceWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\AccentNormalizer.cs" />
@@ -22,7 +24,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\RequestPiplineTemplateMiddleware.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SerializableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\StringHash.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SwaggerAuthorized.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)TokenController.cs" />
   </ItemGroup>
 </Project>
