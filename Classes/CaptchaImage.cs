@@ -4,10 +4,12 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 
 namespace Common.Classes
 {
+
 	public class CaptchaImage : IDisposable
 	{
 		// Public properties (all read-only).
@@ -42,28 +44,33 @@ namespace Common.Classes
 		// Initializes a new instance of the CaptchaImage class using the
 		// specified text, width and height.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		public CaptchaImage(string s, int width, int height)
 		{
 			this.text = s;
 			this.SetDimensions(width, height);
-			this.GenerateImage();
+			if (OperatingSystem.IsWindows())
+				this.GenerateImage();
 		}
 
 		// ====================================================================
 		// Initializes a new instance of the CaptchaImage class using the
 		// specified text, width, height and font family.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		public CaptchaImage(string s, int width, int height, string familyName)
 		{
 			this.text = s;
 			this.SetDimensions(width, height);
 			this.SetFamilyName(familyName);
-			this.GenerateImage();
+			if (OperatingSystem.IsWindows())
+				this.GenerateImage();
 		}
 
 		// ====================================================================
 		// This member overrides Object.Finalize.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		~CaptchaImage()
 		{
 			Dispose(false);
@@ -72,6 +79,7 @@ namespace Common.Classes
 		// ====================================================================
 		// Releases all resources used by this object.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		public void Dispose()
 		{
 			GC.SuppressFinalize(this);
@@ -81,6 +89,7 @@ namespace Common.Classes
 		// ====================================================================
 		// Custom Dispose method to clean up unmanaged resources.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		protected virtual void Dispose(bool disposing)
 		{
 			if (disposing)
@@ -105,6 +114,7 @@ namespace Common.Classes
 		// ====================================================================
 		// Sets the font used for the image text.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		private void SetFamilyName(string familyName)
 		{
 			// If the named font is not installed, default to a system font.
@@ -123,6 +133,7 @@ namespace Common.Classes
 		// ====================================================================
 		// Creates the bitmap image.
 		// ====================================================================
+		[SupportedOSPlatform("windows")]
 		private void GenerateImage()
 		{
 			// Create a new 32-bit bitmap image.
