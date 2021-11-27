@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SwaggerAuthorized.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\TextDataParser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\TokenController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ApiKeyAuthHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BackgroundSerivceWrapper.cs" />
