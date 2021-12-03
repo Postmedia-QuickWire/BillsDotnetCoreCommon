@@ -68,7 +68,9 @@ namespace Common.Classes
 		public ParserConfig Config { get; set; }
 
 		public List<TRowObj> Rows { get; } = new List<TRowObj>();
-		
+
+		public List<string> LineBuf { get; } = new List<string>();
+
 		// keyed on column name - case sensitive
 		public Dictionary<string, ColumnConfig> Columns { get; } = new Dictionary<string, ColumnConfig>();
 		public TextDataParser(ParserConfig config = null)
@@ -116,6 +118,7 @@ namespace Common.Classes
 		{
 			try
 			{
+				LineBuf.Clear();
 				using (StreamReader reader = new StreamReader(filename, Config.encoding_in, Config.CheckForByteMarks))
 				{
 					int row_cnt = 1; // orig file cnt for error msgs
@@ -125,6 +128,8 @@ namespace Common.Classes
 						string lineBuf = reader.ReadLine();
 						while (lineBuf != null)
 						{
+							LineBuf.Add(lineBuf); // save the orig
+
 							if (row_cnt >= Config.StartRow)
 							{
 								string[] fields = null;
