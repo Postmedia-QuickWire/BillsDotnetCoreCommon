@@ -43,7 +43,7 @@ namespace Common.Classes
         {
 			if (isFixedWidth)
 			{
-				if (offset != null && width != null)
+				if (offset != null && width != null && width != 0)
 					AddFixedColumn(name, (int)offset, (int)width);
 			}
 			else if (offset != null)
@@ -147,7 +147,8 @@ namespace Common.Classes
 								if (rec != null)
 								{
 									Rows.Add(rec);
-									if (Config.MaxRows > 0 && ++cnt >= Config.MaxRows)
+									cnt++;
+									if (Config.MaxRows > 0 && cnt >= Config.MaxRows)
 										break;
 								}
 							}
@@ -174,7 +175,7 @@ namespace Common.Classes
 
 			foreach (var cc in Config.Columns)
 			{
-				cols.Add(lineBuf.Substring(cc.Offset, cc.Width));
+				cols.Add(lineBuf.Substring(cc.Offset, cc.Width).Trim());
 			}
 
 			return cols.ToArray<string>();
