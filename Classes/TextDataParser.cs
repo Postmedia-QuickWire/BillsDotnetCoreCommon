@@ -60,16 +60,16 @@ namespace Common.Classes
 		public List<ColumnConfig> Columns { get; set; } = new List<ColumnConfig>();
 	}
 
+
+
 	public class TextDataParser<TRowObj>
 	{
 
-
-
 		public ParserConfig Config { get; set; }
 
-		public List<TRowObj> Rows { get; } = new List<TRowObj>();
+		public List<TRowObj> Rows { get; set; } = new List<TRowObj>();
 
-		public List<string> LineBuf { get; } = new List<string>();
+		public List<string> LineBuf { get; set; } = new List<string>();
 
 		// keyed on column name - case sensitive
 		public Dictionary<string, ColumnConfig> Columns { get; } = new Dictionary<string, ColumnConfig>();
@@ -90,6 +90,9 @@ namespace Common.Classes
 				Columns[cc.Name] = new_cc;
 			}
 		}
+
+
+
 
 		public void CheckMaxColumnWidths(Func<TRowObj, string[]> getRow)
 		{
