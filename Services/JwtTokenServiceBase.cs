@@ -231,7 +231,7 @@ namespace Common.Classes
 			return resp;
 		}
 
-
+		//TODO we need to change this so client_id isn;t actually required when creating a new token
 		public async Task<TokenResponse> RefreshToken(TokenRefreshRequest tok_req)
 		{
 			string clientId = "-";
