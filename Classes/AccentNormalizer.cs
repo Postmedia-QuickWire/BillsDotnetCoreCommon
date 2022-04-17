@@ -30,7 +30,103 @@ namespace Common.Classes
 				"\u00C4\u00E4\u00CB\u00EB\u00CF\u00EF\u00D6\u00F6\u00DC\u00FC\u0178\u00FF" +
 				"\u00C5\u00E5" + "\u00C7\u00E7" + "\u0150\u0151\u0170\u0171";
 
+
+		private static Dictionary<char, char> _accent2ascii = new Dictionary<char, char>()
+		{
+			{'À', 'A'},
+			{'à', 'a'},
+			{'È', 'E'},
+			{'è', 'e'},
+			{'Ì', 'I'},
+			{'ì', 'i'},
+			{'Ò', 'O'},
+			{'ò', 'o'},
+			{'Ù', 'U'},
+			{'ù', 'u'},
+			{'Á', 'A'},
+			{'á', 'a'},
+			{'É', 'E'},
+			{'é', 'e'},
+			{'Í', 'I'},
+			{'í', 'i'},
+			{'Ó', 'O'},
+			{'ó', 'o'},
+			{'Ú', 'U'},
+			{'ú', 'u'},
+			{'Ý', 'Y'},
+			{'ý', 'y'},
+			{'Â', 'A'},
+			{'â', 'a'},
+			{'Ê', 'E'},
+			{'ê', 'e'},
+			{'Î', 'I'},
+			{'î', 'i'},
+			{'Ô', 'O'},
+			{'ô', 'o'},
+			{'Û', 'U'},
+			{'û', 'u'},
+			{'Ŷ', 'Y'},
+			{'ŷ', 'y'},
+			{'Ã', 'A'},
+			{'ã', 'a'},
+			{'Õ', 'O'},
+			{'õ', 'o'},
+			{'Ñ', 'N'},
+			{'ñ', 'n'},
+			{'Ä', 'A'},
+			{'ä', 'a'},
+			{'Ë', 'E'},
+			{'ë', 'e'},
+			{'Ï', 'I'},
+			{'ï', 'i'},
+			{'Ö', 'O'},
+			{'ö', 'o'},
+			{'Ü', 'U'},
+			{'ü', 'u'},
+			{'Ÿ', 'Y'},
+			{'ÿ', 'y'},
+			{'Å', 'A'},
+			{'å', 'a'},
+			{'Ç', 'C'},
+			{'ç', 'c'},
+			{'Ő', 'O'},
+			{'ő', 'o'},
+			{'Ű', 'U'},
+			{'ű', 'u'},
+		};
+
+
+		public static void make_dict()
+		{
+			int ind = 0;
+			StringBuilder buf = new StringBuilder();
+			foreach (var uc in UNICODE)
+			{
+				buf.AppendLine($"{{'{uc}', '{PLAIN_ASCII[ind++]}'}},");
+			}
+			var x = buf.ToString();
+		}
+
+		// I timed it at about 20% faster than the old method
 		public static string Normalize(string accentedWord)
+		{
+			var sb = new StringBuilder();
+			char nc;
+			foreach (var c in accentedWord.AsSpan())
+			{
+				if (_accent2ascii.TryGetValue(c, out nc))
+				{
+					sb.Append(nc);
+				}
+				else
+				{
+					sb.Append(c);
+				}
+			}
+			return sb.ToString();
+		}
+
+		public static string Normalize_old(string accentedWord)
 		{
 			var sb = new StringBuilder();
 			foreach (var c in accentedWord.AsSpan())
