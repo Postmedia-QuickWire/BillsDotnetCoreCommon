@@ -115,7 +115,7 @@ namespace Common.Controllers
 				catch (Exception ex)
 				{
 					if (string.IsNullOrWhiteSpace(resp.Msg))
-						resp.Msg = "unable to create token";
+						resp.Msg = "unable to refresh token";
 
 					Response.StatusCode = StatusCodes.Status401Unauthorized;
 					_logger.LogError("Error refreshing token for '{clientId}', err={Message}", clientId, ex.Message);
