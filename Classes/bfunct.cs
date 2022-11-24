@@ -28,7 +28,8 @@ namespace Common.Classes
 		}
 	}
 
-	public static class bfunct
+	public static class BFunct
+
 	{
 
 		// returns a SortedDictionary of all env strings - sorted by keys
