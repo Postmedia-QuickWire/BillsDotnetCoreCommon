@@ -12,7 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\TextDataParser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BackgroundSerivceWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\AccentNormalizer.cs" />
-    <Compile Include="..\BillsDotnetCoreCommon\Classes\BFunct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\BFunct.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ExecutionPlan.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SerializableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\StringHash.cs" />
