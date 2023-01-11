@@ -9,21 +9,15 @@
     <Import_RootNamespace>Common</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\SwaggerAuthorized.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\TextDataParser.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\TokenController.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\ApiKeyAuthHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BackgroundSerivceWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\AccentNormalizer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\JwtTokenServiceBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\bfunct.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\CaptchaImage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\CipherService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\BFunct.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ExecutionPlan.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\JwtTokenBuilder.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\LoginWatcherService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\RequestPiplineTemplateMiddleware.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SerializableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\StringHash.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.md" />
   </ItemGroup>
 </Project>
