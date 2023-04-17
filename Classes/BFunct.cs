@@ -80,19 +80,19 @@ namespace Common.Classes
 		public static Regex invalidFilenameCharsRegEx = new Regex(string.Format("[{0}]",
 				Regex.Escape(new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars()))));
 
-		public static string CleanFilename(string p_testName)
+		public static string CleanFilename(string filename)
 		{
-			return invalidFilenameCharsRegEx.Replace(p_testName, "").Trim();
-		}
+            return string.Join("_", filename.Split(Path.GetInvalidFileNameChars())).Trim(" _".ToCharArray());
+        }
 		public static bool ContainsBadChars(string p_testName)
 		{
 			return invalidFilenameCharsRegEx.Match(p_testName).Success;
 		}
 
-		// changed to base 36 string from Base64 -- string is URL compliant, no encoding needed!
-		// makes a longer string though  -  note I encode 7 bytes at a time into a 64 bit long to avoid negatives
-		// note also it's NOT case sensitive 
-		public static string GenerateRandomToken(int bytes = 32)
+        // changed to base 36 string from Base64 -- string is URL compliant, no encoding needed!
+        // makes a longer string though  -  note I encode 7 bytes at a time into a 64 bit long to avoid negatives
+        // note also it's NOT case sensitive 
+        public static string GenerateRandomToken(int bytes = 32)
 		{
 			const int bytesPerLong = 7;
 			var randomNumber = new byte[bytes];
