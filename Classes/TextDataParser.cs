@@ -92,6 +92,16 @@ namespace Common.Classes
 		}
 
 
+		//helper - get column row data by name
+		public string GetColumn(string name, string[] row, string def_val = null)
+		{
+			ColumnConfig cc;
+			if (Columns?.TryGetValue(name, out cc) ?? false)
+			{
+				return row[cc.Ordinal];
+			}
+			return def_val;
+		}
 
 
 		public void CheckMaxColumnWidths(Func<TRowObj, string[]> getRow)
